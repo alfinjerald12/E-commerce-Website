@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jolly Fashion</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="account.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Promo Bar -->
+  <div class="promo-bar">
+    <marquee behavior="scroll" direction="right" loop="-1" class="scrool"> Use promo code <b>Jolly 1</b> for first order</marquee>
+  </div>
+  <!-- Header -->
+  <header>
+    <div class="logo" style="color: black;font-weight: bold;">Jolly Fashion</div>
+    <nav>
+      <ul>
+        <li><a href="mens.html"><img src="icons/men.svg" height="15px" width="15px"> Mens</a></li>
+        <li><a href="womens.html"><img src="icons/women.svg" height="15px" width="15px"> Womens</a></li>
+        <li><a href="kids.html"><img src="icons/kids.svg" height="15px" width="15px"> Kids</a></li>
+        <li><a href="journal.html"><img src="icons/journal.svg" height="15px" width="15px"> Journal</a></li>
+        <li><a href="contact.html"><img src="icons/contact.svg" height="15px" width="15px"> Contact</a></li>
+      </ul>
+    </nav>
+    <div class="icons">
+      <a href="index.html"><img src="icons/home.svg" height="15px" width="15px"> Home</a>
+      <a href="cart.html"><img src="icons/bag.svg" height="15px" width="15px"> Cart <span id="cart-count">0</span></a>
+      <a href="#" onclick="openPopup()"><img src="icons/user.svg" height="15px" width="15px"> Account</a>
+    </div>
+    </header>
+   
+ <!-- Popup Modal -->
+<div id="loginPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Welcome to Jolly Fashion</h2><br>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tablink active" onclick="openTab(event,'loginForm')">Login</button>
+      <button class="tablink" onclick="openTab(event,'registerForm')">Register</button>
+    </div>
+
+   <!-- Login Form -->
+<form id="loginForm" class="form active" action="login.php" method="POST">
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="password" name="password" placeholder="Password" required>
+  <button type="submit" class="btns">Sign In</button>
+</form>
+
+<!-- Register Form -->
+<form id="registerForm" class="form" action="register.php" method="POST">
+  <input type="text" name="fullname" placeholder="Full Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="password" name="password" placeholder="Password" required>
+  <input type="tel" name="number" pattern="[0-9]{10}" maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'')" placeholder="Phone Number">
+  <button type="submit" class="btns">Create Account</button>
+</form>
+
+  </div>
+</div>
+  <script src="cart.js"></script>
+  <script src="account.js"></script>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="images/herobg.jpg" alt="Fashion Models">
+    <div class="hero-content">
+      <h1>New Arrivals</h1>
+      <p>Checkout our new collections</p>
+      <div class="buttons">
+        <a href="#" class="btn btn-primary">Dresses</a>
+        <a href="#" class="btn btn-secondary">Shop All</a>
+      </div>
+    </div>
+    
+  </section>
+<div id="welcomeUser"></div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  let formData = new FormData(this);
+
+  fetch("login.php", { method: "POST", body: formData })
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === "success") {
+        localStorage.setItem("user", data.user); // Save username
+        closePopup();
+        showWelcome();
+      } else {
+        alert(data.message);
+      }
+    });
+});
+
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  let formData = new FormData(this);
+
+  fetch("register.php", { method: "POST", body: formData })
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === "success") {
+        localStorage.setItem("user", data.user); // Save username
+        closePopup();
+        showWelcome();
+      } else {
+        alert(data.message);
+      }
+    });
+});
+
+// Show welcome message if user already logged in
+function showWelcome() {
+  let user = localStorage.getItem("user");
+  if (user) {
+    document.getElementById("welcomeUser").innerHTML = "Welcome, " + user + " 🎉 | <a href='#' onclick='logout()'>Logout</a>";
+  }
+}
+
+// Logout function
+function logout() {
+  localStorage.removeItem("user");
+  document.getElementById("welcomeUser").innerHTML = "";
+}
+
+// Run on page load
+window.onload = showWelcome;
+</script>
+
+
+</body>
+<!--FOOTER  SECTION-->
+<footer>
+  <div class="footer-top">
+    <h2>More brands than any other fashion retailer</h2>
+    <p>Explore almost 2,000 brands from High Street to High End - Free Shipping & Returns</p>
+  </div>
+
+  <div class="footer-main">
+    <div class="footer-column">
+      <h3>Help & Contact</h3>
+      <p>See all help topics</p>
+      <p>Paying by invoice</p>
+      <p>Track your parcel</p>
+      <p>Report a damaged item</p>
+      <p>Discover Zalando Plus</p>
+      <p>Delivery information</p>
+      <p>Return an order</p>
+      <p>Find the right size</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Gift Cards</h3>
+      <p>Buy Gift Cards</p>
+      <p>About gift cards and vouchers</p>
+      <p>Redeem a Gift Card</p>
+      <p>Corporate Gift Cards</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>About us</h3>
+      <p>Visit our corporate site</p>
+      <p>Jobs</p>
+      <p>Partner Program</p>
+      <p>Marketing services</p>
+      <p>Press</p>
+      <p>Connected Retail</p>
+    </div>
+
+    <div class="footer-extra">
+      <div class="partners">
+        <h4>Our partners</h4>
+        <a href=""><img src="icons/dhl.svg" height="15px" width="15px"> <span style="color: rgb(0, 0, 0);"> DHL</span></a>
+        <a href="#"><img src="icons/nike.svg" height="15px" width="15px"><span style="color: black;"> Nike</span></a>
+        <a href="#"><img src="icons/hermes.svg" height="15px" width="15px"><span style="color: black;"> Hermes</span></a>
+        <a href="#"><img src="icons/adidas.svg" height="15px" width="15px"><span style="color: black;"> Adidas</span></a>
+ 
+      </div>
+
+      <div class="payments">
+        <h4>Our payment methods</h4>
+        <a href=""><img src="icons/mastercard.svg" height="15px" width="15px"> <span style="color: rgb(0, 0, 0);"> Mastercard</span></a>
+        <a href="#"><img src="icons/visa.svg" height="15px" width="15px"><span style="color: black;"> Visa</span></a>
+        <a href="#"><img src="icons/paypal.svg" height="15px" width="15px"><span style="color: black;"> Paypal</span></a>
+        <a href="#"><img src="icons/upi.svg" height="15px" width="15px"><span style="color: black;"> UPI</span></a>
+      </div>
+
+      <div class="promises">
+        <h4>Our promises</h4>
+        <p>Free delivery and returns</p>
+        <p>100-day return policy</p>
+        <p>Flexible payment options</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="links">
+      <p>Imprint</p>
+      <p>Terms & Conditions</p>
+      <p>Privacy Notice</p>
+      <p>Data preferences</p>
+    </div><br>
+
+    <p style="color: white;">All prices include VAT | The crossed out price indicates the manufacturer's recommended retail price.</p>
+
+    <div class="apps-social">
+      <div class="apps">
+        <a href=""><img src="icons/appstore.svg" height="15px" width="15px"> <span style="color: white;"> Appstore</span></a>
+        <a href=""><img src="icons/playstore.svg" height="15px" width="15px"> <span style="color: white;"> Playstore</span></a>
+      </div><br>
+      <div class="social">
+        <a href=""><img src="icons/twitter.svg" height="15px" width="15px"> <span style="color: white;"> Twitter</span></a>
+        <a href="#"><img src="icons/facebook.svg" height="15px" width="15px"><span style="color: white;"> Facebook</span></a>
+        <a href="#"><img src="icons/instagram.svg" height="15px" width="15px"><span style="color: white;"> Instagram</span></a>
+        <a href="#"><img src="icons/youtube.svg" height="15px" width="15px"><span style="color: white;"> Youtube</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+ <div class="copyright">
+  <p> &copy; 2025 Jolly Fashion  |  All rights reserved</p>
+  </div>
+</html>

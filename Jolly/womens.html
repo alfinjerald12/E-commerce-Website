@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jolly Fashion | Womens</title>
+    <link rel="stylesheet" href="womens.css">
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+    <!-- Promo Bar -->
+  <div class="promo-bar">
+    <marquee behavior="scroll" direction="right" loop="-1" class="scrool"> Use promo code <b>Jolly 1</b> for first order</marquee>
+  </div>
+  <!-- Header -->
+  <header>
+    <div class="logo">Jolly Fashion</div>
+    <nav>
+      <ul>
+        <li><a href="mens.html"><img src="icons/men.svg" height="15px" width="15px"> Mens</a></li>
+        <li><a href="womens.html"><img src="icons/women.svg" height="15px" width="15px"> Womens</a></li>
+        <li><a href="kids.html"><img src="icons/kids.svg" height="15px" width="15px"> Kids</a></li>
+        <li><a href="journal.html"><img src="icons/journal.svg" height="15px" width="15px"> Journal</a></li>
+        <li><a href="contact.html"><img src="icons/contact.svg" height="15px" width="15px"> Contact</a></li>
+      </ul>
+    </nav>
+    <div class="icons">
+      <a href="index.html"><img src="icons/home.svg" height="15px" width="15px"> Home</a>
+      <a href="cart.html"><img src="icons/bag.svg" height="15px" width="15px"> Cart <span id="cart-count">0</span></a>
+      <a href="#" onclick="openPopup()"><img src="icons/user.svg" height="15px" width="15px"> Account</a>
+    </div>
+    </header>
+   
+ 
+
+  <!-- Popup Modal -->
+<div id="loginPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h2>Welcome to Jolly Fashion</h2><br>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tablink active" onclick="openTab(event,'loginForm')">Login</button>
+      <button class="tablink" onclick="openTab(event,'registerForm')">Register</button>
+    </div>
+
+    <!-- Login Form -->
+<form id="loginForm" class="form active" action="login.php" method="POST">
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="password" name="password" placeholder="Password" required>
+  <button type="submit" class="btns">Sign In</button>
+</form>
+
+<!-- Register Form -->
+<form id="registerForm" class="form" action="register.php" method="POST">
+  <input type="text" name="fullname" placeholder="Full Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="password" name="password" placeholder="Password" required>
+  <input type="tel" name="number" pattern="[0-9]{10}" maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'')" placeholder="Phone Number">
+  <button type="submit" class="btns">Create Account</button>
+</form>
+  </div>
+</div>
+  <script src="cart.js"></script>
+  <script src="account.js"></script>
+  
+ <!-- Hero Section -->
+  <section class="hero">
+    <img src="images/womensbg.jpg" alt="Fashion Models">
+    <div class="hero-content">
+      <h1>Sensational Outfits</h1>
+      <p style="font-weight: bold;">Checkout our new collections</p>
+      <div class="buttons">
+        <a href="#" class="btn btn-primary">Shop Now</a>
+      </div>
+    </div>
+  </section>
+   <!-- Featured Events -->
+    <section class="featured">
+        <div class="event-grid">
+            <div class="event-card" data-name="Printed Crop Top" data-price="1999" data-image="images/women1.jpg">
+                <img src="images/women1.jpg" alt="Event 1">
+                <h3>Printed Crop Top</h3>
+                <p style="font-weight: bold; color: black;">₹ 1999</p>
+                 <a class="star"><img src="icons/fourstar.svg" height="20px" width="20px"></a>
+                <button onclick="addToCart(this)">Add To Cart</button>
+            </div>
+            <div class="event-card" data-name="Black Cotton Kurta" data-price="2999" data-image="images/women2.jpg">
+                <img src="images/women2.jpg" alt="Event 2">
+                <h3>Black Cotton Kurta</h3>
+                <p style="font-weight: bold; color: black;">₹ 2999</p>
+                 <a class="star"><img src="icons/fivestar.svg" height="20px" width="20px"></a>
+                <button onclick="addToCart(this)">Add To Cart</button>
+            </div>
+            <div class="event-card" data-name="Embroidered Fancy Saree" data-price="3999" data-image="images/women3.png">
+                <img src="images/women3.png" alt="Event 3">
+                <h3>Embroidered Fancy Saree</h3>
+                <p style="font-weight: bold; color: black;">₹ 3999</p>
+                 <a class="star"><img src="icons/fivestar.svg" height="20px" width="20px"></a>
+                <button onclick="addToCart(this)">Add To Cart</button>
+            </div></section>
+            <section class="featured">
+        <div class="event-grid">
+            <div class="event-card" data-name="Printed Casual Shirt" data-price="1499" data-image="images/women4.png">
+                <img src="images/women4.png" alt="Event 1">
+                <h3>Printed Casual Shirt</h3>
+                <p style="font-weight: bold; color: black;">₹ 1499</p>
+                 <a class="star"><img src="icons/threestar.svg" height="20px" width="20px"></a>
+                <button onclick="addToCart(this)">Add To Cart</button>
+            </div>
+            <div class="event-card" data-name="Women Occasion Set" data-price="2999" data-image="images/women5.png">
+                <img src="images/women5.png" alt="Event 2">
+                <h3>Women Occasion Set</h3>
+                <p style="font-weight: bold; color: black;">₹ 2999</p>
+                 <a class="star"><img src="icons/fourstar.svg" height="20px" width="20px"></a>
+                <button onclick="addToCart(this)">Add To Cart</button>
+            </div>
+            <div class="event-card" data-name="Soft-Cotton Skirt" data-price="1999" data-image="images/women6.png">
+                <img src="images/women6.png" alt="Event 3">
+                <h3>Soft-Cotton Skirt</h3>
+                <p style="font-weight: bold; color: black;">₹ 1999</p>
+                 <a class="star"><img src="icons/fivestar.svg" height="20px" width="20px"></a>
+                <button onclick="addToCart(this)">Add To Cart</button>
+            </div></section>
+             <section class="featured">
+        <div class="event-grid">
+            <div class="event-card" data-name="Korean Earings" data-price="1499" data-image="images/women7.jpg">
+                <img src="images/women7.jpg" alt="Event 1">
+                <h3>Korean Earings</h3>
+                <p style="font-weight: bold; color: black;">₹ 1499</p>
+                 <a class="star"><img src="icons/fivestar.svg" height="20px" width="20px"></a>
+                <button onclick="addToCart(this)">Add To Cart</button>
+            </div>
+            <div class="event-card" data-name="Rose Gold Analog Watch" data-price="2999" data-image="images/women8.jpg">
+                <img src="images/women8.jpg" alt="Event 2">
+                <h3>Rose Gold Analog Watch</h3>
+                <p style="font-weight: bold; color: black;">₹ 2999</p>
+                 <a class="star"><img src="icons/fourstar.svg" height="20px" width="20px"></a>
+                <button onclick="addToCart(this)">Add To Cart</button>
+            </div>
+            <div class="event-card" data-name="Women Fancy Sandals" data-price="1999" data-image="images/women9.png">
+                <img src="images/women9.png" alt="Event 2">
+                <h3>Women Fancy Sandals</h3>
+                <p style="font-weight: bold; color: black;">₹ 1999</p>
+                 <a class="star"><img src="icons/threestar.svg" height="20px" width="20px"></a>
+                <button onclick="addToCart(this)">Add To Cart</button>
+            </section>
+    
+<!--FOOTER  SECTION-->
+<footer>
+  <div class="footer-top">
+    <h2>More brands than any other fashion retailer</h2>
+    <p>Explore almost 2,000 brands from High Street to High End - Free Shipping & Returns</p>
+  </div>
+
+  <div class="footer-main">
+    <div class="footer-column">
+      <h3>Help & Contact</h3>
+      <p>See all help topics</p>
+      <p>Paying by invoice</p>
+      <p>Track your parcel</p>
+      <p>Report a damaged item</p>
+      <p>Discover Zalando Plus</p>
+      <p>Delivery information</p>
+      <p>Return an order</p>
+      <p>Find the right size</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Gift Cards</h3>
+      <p>Buy Gift Cards</p>
+      <p>About gift cards and vouchers</p>
+      <p>Redeem a Gift Card</p>
+      <p>Corporate Gift Cards</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>About us</h3>
+      <p>Visit our corporate site</p>
+      <p>Jobs</p>
+      <p>Partner Program</p>
+      <p>Marketing services</p>
+      <p>Press</p>
+      <p>Connected Retail</p>
+    </div>
+
+    <div class="footer-extra">
+      <div class="partners">
+        <h4>Our partners</h4>
+        <a href=""><img src="icons/dhl.svg" height="15px" width="15px"> <span style="color: rgb(0, 0, 0);"> DHL</span></a>
+        <a href="#"><img src="icons/nike.svg" height="15px" width="15px"><span style="color: black;"> Nike</span></a>
+        <a href="#"><img src="icons/hermes.svg" height="15px" width="15px"><span style="color: black;"> Hermes</span></a>
+        <a href="#"><img src="icons/adidas.svg" height="15px" width="15px"><span style="color: black;"> Adidas</span></a>
+ 
+      </div>
+
+      <div class="payments">
+        <h4>Our payment methods</h4>
+        <a href=""><img src="icons/mastercard.svg" height="15px" width="15px"> <span style="color: rgb(0, 0, 0);"> Mastercard</span></a>
+        <a href="#"><img src="icons/visa.svg" height="15px" width="15px"><span style="color: black;"> Visa</span></a>
+        <a href="#"><img src="icons/paypal.svg" height="15px" width="15px"><span style="color: black;"> Paypal</span></a>
+        <a href="#"><img src="icons/upi.svg" height="15px" width="15px"><span style="color: black;"> UPI</span></a>
+      </div>
+
+      <div class="promises">
+        <h4>Our promises</h4>
+        <p>Free delivery and returns</p>
+        <p>100-day return policy</p>
+        <p>Flexible payment options</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="links">
+      <p>Imprint</p>
+      <p>Terms & Conditions</p>
+      <p>Privacy Notice</p>
+      <p>Data preferences</p>
+    </div><br>
+
+    <p style="color: white;">All prices include VAT | The crossed out price indicates the manufacturer's recommended retail price.</p>
+
+    <div class="apps-social">
+      <div class="apps">
+        <a href=""><img src="icons/appstore.svg" height="15px" width="15px"> <span style="color: white;"> Appstore</span></a>
+        <a href=""><img src="icons/playstore.svg" height="15px" width="15px"> <span style="color: white;"> Playstore</span></a>
+      </div><br>
+      <div class="social">
+        <a href=""><img src="icons/twitter.svg" height="15px" width="15px"> <span style="color: white;"> Twitter</span></a>
+        <a href="#"><img src="icons/facebook.svg" height="15px" width="15px"><span style="color: white;"> Facebook</span></a>
+        <a href="#"><img src="icons/instagram.svg" height="15px" width="15px"><span style="color: white;"> Instagram</span></a>
+        <a href="#"><img src="icons/youtube.svg" height="15px" width="15px"><span style="color: white;"> Youtube</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+ <div class="copyright">
+  <p> &copy; 2025 Jolly Fashion  |  All rights reserved</p>
+ </div>
+</html>

@@ -1,0 +1,309 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+/* Promo Bar */
+.promo-bar {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 14px;
+  animation-direction: normal;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background:  linear-gradient(to left,#302f2f,rgb(231, 219, 219));
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  letter-spacing: 3px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+nav a:hover{
+  transform: scale(1.1);
+}
+
+.icons a {
+  margin-left: 15px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  gap: 20px;
+  list-style: none;
+  font: serif;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+.icons a:hover{
+  transform: scale(1.1);
+}
+}
+
+/*footer page*/
+
+footer {
+  background:linear-gradient(to left,#302f2f,rgb(231, 219, 219));
+  color: rgb(0, 0, 0);
+  font-family: Arial, sans-serif;
+}
+
+.footer-top {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.footer-top h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.footer-top p {
+  font-size: 16px;
+  color: #000000;
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px 20px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-column a {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+.footer-extra {
+  flex: 1 1 300px;
+  margin: 10px;
+}
+
+.footer-extra h4 {
+  font-size: 16px;
+  margin: 15px 0 5px;
+}
+.footer-extra a{
+  margin: 6px;
+}
+
+.footer-extra p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  background-color: #111;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.footer-bottom .links p {
+  color: rgb(255, 255, 255);
+  margin: 0 10px;
+  text-decoration: none;
+}
+.apps-social {
+  margin-top: 15px;
+}
+.apps-social a{
+  display: inline-block;
+  transition: transform 0.2s;
+  margin: 6px;
+
+}
+.apps-social a:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.copyright{
+  background-color: #111;
+  text-align: center;
+  padding:15px;
+  color: #aaa;
+  font-size: 14px;
+  border-top: 1px solid #333;
+}
+.copyright p{
+  margin: 0;
+}
+body {
+  background: #f3f3f3;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  display: block;
+}
+
+.hero-content {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: rgb(0, 0, 0);
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+}
+
+.hero-content p {
+  margin: 10px 0 20px;
+  font-size: 18px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-left: 50px;
+}
+
+.btn-primary {
+  background: #000000e3;
+  color: rgb(255, 255, 255);
+}
+
+/* Featured Events */
+.featured {
+    text-align: center;
+    padding: 50px 20px;
+    background:linear-gradient(to left,rgb(87, 81, 81),rgb(197, 183, 183));
+}
+.featured h2{
+  font-size: 50px;
+
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 180px;
+    margin-top: 10px;
+}
+
+.event-card {
+    background: linear-gradient(to left,#302f2f,rgb(231, 219, 219));
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.event-card:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.event-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.event-card h3 {
+    margin: 15px 0 10px;
+    color: #000000;
+}
+
+.event-card button {
+    background:#000000;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .icons {
+    margin-top: 10px;
+  }
+
+  .hero-content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .footer-main, .event-grid {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+}

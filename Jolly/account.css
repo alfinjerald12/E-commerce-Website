@@ -1,0 +1,117 @@
+/* Popup overlay */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+/* Popup box */
+.popup-content {
+  background: url(images/loginbg.jpg);
+  background-size: cover;
+  width: 350px;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 25px;
+  cursor: pointer;
+  color: #ffffff;
+  background: rgba(255,255,255,0.2);
+  text-shadow: 0 0 5px rgba(255,255,255,0.8);
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  border-radius: 2px;
+}
+.close:hover { 
+  background:linear-gradient(135deg,#ff416c,#ff4b2b);
+  color: rgb(255, 255, 255);
+ }
+
+/* Tabs */
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+  
+}
+.tablink {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background:  rgba(255,255,255,0.3);
+  text-shadow: 0 0 5px rgba(255,255,255,0.8);
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+  border-radius: 4px;
+}
+.tablink.active {
+  background: linear-gradient(135deg,#ff416c,#ff4b2b);
+  color: white;
+}
+
+/* Forms */
+.form {
+  display: none;
+  flex-direction: column;
+}
+.form.active {
+  display: flex;
+}
+.form input {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: rgba(255,255,255,0.3);
+  color: rgb(255, 255, 255);
+}
+.btns {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  background:  linear-gradient(135deg,#ff4b2b,#ff416c);
+  text-shadow: 0 0 5px rgba(255,255,255,0.8);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+.btns:hover {
+  background: linear-gradient(135deg,#ff416c,#ff4b2b);
+  text-shadow: 0 0 5px rgba(255,255,255,0.8);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.popup-content h2{
+  color: #fff;
+  font-family: serif;
+  font-size: 20px;
+  text-shadow: 0 0 5px rgba(255,255,255,0.8);
+  margin-left: 4px;
+}
+.form input::placeholder{
+  color: #fff;
+}
+
+

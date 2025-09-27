@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+/* Promo Bar */
+.promo-bar {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 14px;
+  animation-direction: normal;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background:linear-gradient(to right,rgb(234, 136, 247),rgb(255, 249, 249));
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  letter-spacing: 3px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+nav a:hover{
+  transform: scale(1.1);
+}
+
+.icons a {
+  margin-left: 15px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  gap: 20px;
+  list-style: none;
+  font: serif;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+.icons a:hover{
+  transform: scale(1.1);
+}
+
+/*footer page*/
+footer {
+  background: linear-gradient(to right,rgb(234, 136, 247),rgb(255, 249, 249));
+  color: rgb(0, 0, 0);
+  font-family: Arial, sans-serif;
+}
+
+.footer-top {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.footer-top h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.footer-top p {
+  font-size: 16px;
+  color: #000000;
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px 20px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-column a {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+.footer-extra {
+  flex: 1 1 300px;
+  margin: 10px;
+}
+
+.footer-extra h4 {
+  font-size: 16px;
+  margin: 15px 0 5px;
+}
+.footer-extra a{
+  margin: 6px;
+}
+
+.footer-extra p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  background-color: #111;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.footer-bottom .links p {
+  color: rgb(255, 255, 255);
+  margin: 0 10px;
+  text-decoration: none;
+}
+.apps-social {
+  margin-top: 15px;
+}
+.apps-social a{
+  display: inline-block;
+  transition: transform 0.2s;
+  margin: 6px;
+
+}
+.apps-social a:hover{
+  transform: scale(1.1);
+}
+.copyright{
+  background-color: #111;
+  text-align: center;
+  padding:15px;
+  color: #aaa;
+  font-size: 14px;
+  border-top: 1px solid #333;
+}
+.copyright p{
+  margin: 0;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+
+/* Statement Section */
+.statement .text {
+
+    padding: 20px;
+}
+.statement h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    font-family: serif;
+}
+.statement p {
+    font-family: serif;
+    font-size: 24px;
+}
+.statement ul{
+  margin-top: 12px;
+  display: list-item;
+  margin-left: 50px;
+  font-family: serif;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+.shop{
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 12px 20px;
+    text-decoration: none;
+    margin-top: 70px;
+    font-weight: bold;
+    margin-left: 550px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.shop:hover{
+  transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  display: block;
+}
+
+/* Features */
+.features {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+.feature {
+    flex: 1 1 200px;
+    padding: 10px;
+}
+.feature p {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .icons {
+    margin-top: 10px;
+  }
+
+  .footer-main, .features {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .statement .text {
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  .shop {
+    margin-left: 0;
+  }
+}
